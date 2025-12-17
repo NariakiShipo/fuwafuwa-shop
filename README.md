@@ -70,21 +70,142 @@
 
 ## 📁 專案結構
 
-```
-petShop/
-├── src/
-│   ├── components/      # React 元件
-│   ├── pages/          # 頁面元件
-│   ├── hooks/          # 自訂 Hooks
-│   ├── services/       # API 服務
-│   ├── contexts/       # React Context
-│   ├── i18n/           # 多語言
-│   ├── types/          # TypeScript 類型
-│   └── libs/           # 第三方庫配置
-├── public/             # 靜態資源
-├── docs/              # 文件
-└── reference/         # 參考資料
-```
+/Users/nariaki/Desktop/web/fuwafuwa-shop/
+├───.env.example
+├───.gitignore
+├───firebase.json
+├───firestore.rules
+├───index.html
+├───package-lock.json
+├───package.json
+├───README.md
+├───tsconfig.json
+├───tsconfig.node.json
+├───vite.config.ts
+├───.git/...
+├───docs/
+│   ├───CHECKLIST.md
+│   ├───GITHUB_UPLOAD_CHECKLIST.md
+│   ├───INDEX_JP.md
+│   ├───INDEX.md
+│   ├───PROJECT_STRUCTURE.md
+│   ├───README_OLD.md
+│   ├───README.md
+│   ├───STRUCTURE_CLEANUP.md
+│   ├───guides/
+│   │   ├───FIREBASE_CONFIG_GUIDE.md
+│   │   ├───FIREBASE_SETUP.md
+│   │   ├───FIRESTORE_RULES_GUIDE.md
+│   │   ├───FIRESTORE_SETUP.md
+│   │   ├───QUICK_FIX.md
+│   │   └───VISUAL_GUIDE.md
+│   └───implementation/
+│       ├───FIREBASE_IMPLEMENTATION.md
+│       ├───IMPLEMENTATION_COMPLETE.md
+│       ├───IMPLEMENTATION_JP.md
+│       └───IMPLEMENTATION.md
+├───node_modules/...
+├───public/
+│   └───images/
+│       ├───background.png
+│       ├───ball.png
+│       ├───bow.png
+│       ├───brush.png
+│       ├───buy_button.png
+│       ├───cage.png
+│       ├───can.png
+│       ├───checkout.png
+│       ├───collar.png
+│       ├───count_decrease.png
+│       ├───count_increase.png
+│       ├───dog_heart_press_1.png
+│       ├───dog_heart_press_2.png
+│       ├───dog_product_illustration.png
+│       ├───dog.png
+│       ├───electric_chicken_background.png
+│       ├───expanded_item.png
+│       ├───fuwa_title.png
+│       ├───hat.png
+│       ├───introduce.png
+│       ├───item_field.png
+│       ├───product_field.png
+│       ├───shop_item.png
+│       ├───shopping_cart.png
+│       ├───shopping-cart-icon.png
+│       └───swipe_right.png
+├───reference/
+│   ├───aminal-01.png
+│   ├───aminal-02.png
+│   └───aminal-03.png
+└───src/
+    ├───App.css
+    ├───App.tsx
+    ├───main.tsx
+    ├───vite-env.d.ts
+    ├───assets/
+    │   └───styles/
+    │       └───globals.css
+    ├───components/
+    │   ├───index.ts
+    │   ├───Cart/
+    │   │   ├───BasketVisualizer.css
+    │   │   └───BasketVisualizer.tsx
+    │   ├───Common/
+    │   │   ├───LanguageSwitcher.css
+    │   │   └───LanguageSwitcher.tsx
+    │   ├───Layout/
+    │   │   ├───NavigationBar.css
+    │   │   ├───NavigationBar.tsx
+    │   │   ├───SplitScreen.css
+    │   │   └───SplitScreen.tsx
+    │   ├───Pet/
+    │   │   ├───PetRoom.css
+    │   │   ├───PetRoom.tsx
+    │   │   ├───ReactionPreview.css
+    │   │   └───ReactionPreview.tsx
+    │   └───Shop/
+    │       ├───ProductCard.css
+    │       ├───ProductCard.tsx
+    │       ├───ShopGrid.css
+    │       └───ShopGrid.tsx
+    ├───contexts/
+    │   └───AuthContext.tsx
+    ├───hooks/
+    │   ├───index.ts
+    │   ├───useCart.ts
+    │   ├───useOrders.ts
+    │   └───usePet.ts
+    ├───i18n/
+    │   ├───index.ts
+    │   ├───LanguageContext.tsx
+    │   ├───translations.ts
+    │   └───secrets/
+    ├───libs/
+    │   └───firebase.ts
+    ├───pages/
+    │   ├───CartPage.css
+    │   ├───CartPage.tsx
+    │   ├───HomePage.css
+    │   ├───HomePage.tsx
+    │   ├───index.ts
+    │   ├───LoginPage.css
+    │   ├───LoginPage.tsx
+    │   ├───MyOrdersPage.css
+    │   ├───MyOrdersPage.tsx
+    │   ├───OrderPage.css
+    │   ├───OrderPage.tsx
+    │   ├───OrderSuccessPage.css
+    │   ├───OrderSuccessPage.tsx
+    │   ├───ProductDetail.css
+    │   └───ProductDetail.tsx
+    ├───services/
+    │   ├───cartService.ts
+    │   ├───orderService.ts
+    │   ├───petService.ts
+    │   ├───productService.ts
+    │   └───userService.ts
+    └───types/
+        └───index.ts
 
 ## 🔑 環境變數
 
