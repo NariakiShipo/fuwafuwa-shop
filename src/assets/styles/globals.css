@@ -1,0 +1,91 @@
+:root {
+  /* Color Palette from Reference Images */
+  --color-bg-cream: #FFE4B5;
+  --color-bg-light-cream: #FFF5E6;
+  --color-accent-orange: #E88D67;
+  --color-accent-red: #DC5F4F;
+  --color-accent-pink: #FFB6C1;
+  --color-text-brown: #5D4037;
+  --color-border-orange: #FF9966;
+  --color-white: #FFFFFF;
+  --color-shadow: rgba(93, 64, 55, 0.15);
+  
+  /* Spacing */
+  --border-radius-large: 24px;
+  --border-radius-medium: 16px;
+  --border-radius-small: 12px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* Typography */
+  --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-normal: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  background-color: var(--color-bg-cream);
+  color: var(--color-text-brown);
+  overflow-x: hidden;
+}
+
+/* Cute rounded button style */
+.btn-primary {
+  background-color: var(--color-accent-orange);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius-medium);
+  padding: 12px 24px;
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px var(--color-shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px var(--color-shadow);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Card style */
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-large);
+  border: 3px solid var(--color-border-orange);
+  box-shadow: 0 4px 12px var(--color-shadow);
+  overflow: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-light-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-orange);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-red);
+}

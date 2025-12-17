@@ -1,0 +1,142 @@
+.pet-room {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #FFF5E6, #FFE4B5);
+}
+
+.pet-room__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.pet-room__background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pet-room__title {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.pet-room__title img {
+  height: 60px;
+  width: auto;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.pet-room__controls {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  z-index: 10;
+}
+
+.pet-room__control-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--border-radius-medium);
+  background-color: var(--color-white);
+  border: 3px solid var(--color-accent-orange);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 8px var(--color-shadow);
+  padding: 8px;
+}
+
+.pet-room__control-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px var(--color-shadow);
+}
+
+.pet-room__control-btn:active {
+  transform: scale(0.95);
+}
+
+.pet-room__control-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pet-room__pet {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  transition: transform 0.3s ease;
+}
+
+.pet-room__pet.animating {
+  animation: petBounce 0.5s ease-in-out;
+}
+
+@keyframes petBounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-20px);
+  }
+}
+
+.pet-room__pet img {
+  height: 150px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.pet-room__pet-reaction {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32px;
+  animation: reactionPop 0.5s ease-out;
+}
+
+@keyframes reactionPop {
+  0% {
+    transform: translateX(-50%) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.pet-room__decorations {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  z-index: 3;
+}
+
+.pet-room__cage {
+  height: 80px;
+  width: auto;
+  opacity: 0.7;
+}

@@ -1,0 +1,46 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // 用戶資料
+    match /users/{userId} {
+      // 只有用戶本人可以讀寫自己的資料
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // 用戶寵物
+    match /userPets/{userId} {
+      // 只有用戶本人可以讀寫自己的寵物資料
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // 購物車
+    match /carts/{userId} {
+      // 只有用戶本人可以讀寫自己的購物車
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // 訂單
+    match /orders/{orderId} {
+      // 用戶只能讀取自己的訂單
+      allow read: if request.auth != null && request.auth.uid == resource.data.userId;
+      
+      // 創建訂單時，確保 userId 與當前用戶匹配
+      allow create: if request.auth != null && request.auth.uid == request.resource.data.userId;
+      
+      // 用戶可以取消自己待處理的訂單
+      allow update: if request.auth != null 
+                    && request.auth.uid == resource.data.userId
+                    && resource.data.status == 'pending'
+                    && request.resource.data.status == 'cancelled';
+    }
+    
+    // 商品資料
+    match /products/{productId} {
+      // 所有用戶可以讀取商品，但只有管理員可以寫入
+      allow read: if true;
+      // 寫入權限預留給管理後台（需要配置管理員權限）
+      allow write: if false;  // 暫時關閉，後續可以改為管理員權限
+    }
+  }
+}
