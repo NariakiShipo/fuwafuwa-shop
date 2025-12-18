@@ -1,6 +1,6 @@
 .order-detail-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #ffeef8 0%, #fff5f7 100%);
+  background: linear-gradient(135deg, #FFE4B5 0%, #FFF5E6 100%);
   padding: 40px 20px;
 }
 
@@ -16,7 +16,7 @@
 .back-button {
   background: none;
   border: none;
-  color: #ff69b4;
+  color: #E88D67;
   font-size: 16px;
   cursor: pointer;
   margin-bottom: 15px;
@@ -28,11 +28,11 @@
 }
 
 .back-button:hover {
-  color: #ff1493;
+  color: #DC5F4F;
 }
 
 .detail-header h1 {
-  color: #ff69b4;
+  color: #5D4037;
   font-size: 32px;
   margin: 0;
 }
@@ -43,7 +43,7 @@
   border-radius: 16px;
   padding: 24px;
   margin-bottom: 24px;
-  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.1);
+  box-shadow: 0 4px 12px rgba(93, 64, 55, 0.15);
 }
 
 .status-header {
@@ -114,11 +114,11 @@
   border-radius: 16px;
   padding: 24px;
   margin-bottom: 24px;
-  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.1);
+  box-shadow: 0 4px 12px rgba(93, 64, 55, 0.15);
 }
 
 .order-progress h2 {
-  color: #ff69b4;
+  color: #E88D67;
   font-size: 20px;
   margin: 0 0 24px 0;
 }
@@ -169,9 +169,9 @@
 }
 
 .step.active .step-icon {
-  border-color: #ff69b4;
-  background: linear-gradient(135deg, #ff69b4, #ff1493);
-  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+  border-color: #E88D67;
+  background: linear-gradient(135deg, #E88D67, #DC5F4F);
+  box-shadow: 0 4px 12px rgba(232, 141, 103, 0.3);
 }
 
 .step-text {
@@ -182,7 +182,7 @@
 }
 
 .step.active .step-text {
-  color: #ff69b4;
+  color: #E88D67;
   font-weight: 600;
 }
 
@@ -202,11 +202,11 @@
   border-radius: 16px;
   padding: 24px;
   margin-bottom: 24px;
-  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.1);
+  box-shadow: 0 4px 12px rgba(93, 64, 55, 0.15);
 }
 
 .order-items-section h2 {
-  color: #ff69b4;
+  color: #E88D67;
   font-size: 20px;
   margin: 0 0 20px 0;
 }
@@ -269,7 +269,7 @@
 .item-subtotal {
   font-size: 18px;
   font-weight: 600;
-  color: #ff69b4;
+  color: #DC5F4F;
   min-width: 100px;
   text-align: right;
 }
@@ -280,11 +280,11 @@
   border-radius: 16px;
   padding: 24px;
   margin-bottom: 24px;
-  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.1);
+  box-shadow: 0 4px 12px rgba(93, 64, 55, 0.15);
 }
 
 .shipping-info-section h2 {
-  color: #ff69b4;
+  color: #E88D67;
   font-size: 20px;
   margin: 0 0 20px 0;
 }
@@ -320,11 +320,11 @@
   border-radius: 16px;
   padding: 24px;
   margin-bottom: 24px;
-  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.1);
+  box-shadow: 0 4px 12px rgba(93, 64, 55, 0.15);
 }
 
 .payment-info-section h2 {
-  color: #ff69b4;
+  color: #E88D67;
   font-size: 20px;
   margin: 0 0 20px 0;
 }
@@ -344,7 +344,7 @@
 }
 
 .payment-row.total {
-  background: linear-gradient(135deg, #ff69b4, #ff1493);
+  background: linear-gradient(135deg, #E88D67, #DC5F4F);
   color: white;
   font-weight: 600;
   font-size: 18px;
@@ -371,24 +371,24 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #ff69b4, #ff1493);
+  background: linear-gradient(135deg, #E88D67, #DC5F4F);
   color: white;
-  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+  box-shadow: 0 4px 12px rgba(232, 141, 103, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+  box-shadow: 0 6px 20px rgba(232, 141, 103, 0.4);
 }
 
 .btn-secondary {
   background: white;
-  color: #ff69b4;
-  border: 2px solid #ff69b4;
+  color: #E88D67;
+  border: 2px solid #E88D67;
 }
 
 .btn-secondary:hover {
-  background: #fff5f7;
+  background: #FFF5E6;
 }
 
 /* Loading & Error */

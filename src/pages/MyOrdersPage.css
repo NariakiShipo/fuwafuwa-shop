@@ -1,6 +1,6 @@
 .my-orders-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #FFE4B5 0%, #FFF5E6 100%);
   padding: 2rem 1rem;
 }
 
@@ -11,7 +11,7 @@
 
 .orders-container h1 {
   font-size: 2.5rem;
-  color: #2c3e50;
+  color: #5D4037;
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -29,7 +29,7 @@
   padding: 1.5rem;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(93, 64, 55, 0.15);
   transition: transform 0.3s ease;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .stat-card.highlight {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #E88D67 0%, #DC5F4F 100%);
   color: white;
 }
 
@@ -64,12 +64,12 @@
   background: white;
   border-radius: 16px;
   padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(93, 64, 55, 0.15);
   transition: all 0.3s ease;
 }
 
 .order-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 24px rgba(93, 64, 55, 0.2);
 }
 
 .order-header {
@@ -88,7 +88,7 @@
 
 .order-number .value {
   font-weight: bold;
-  color: #2c3e50;
+  color: #5D4037;
   font-size: 1.1rem;
 }
 
@@ -152,7 +152,7 @@
 
 .item-details h3 {
   font-size: 1rem;
-  color: #2c3e50;
+  color: #5D4037;
   margin-bottom: 0.25rem;
 }
 
@@ -164,7 +164,7 @@
 .item-subtotal {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #e74c3c;
+  color: #DC5F4F;
 }
 
 /* 訂單底部 */
@@ -192,7 +192,7 @@
 }
 
 .info-item .value {
-  color: #2c3e50;
+  color: #5D4037;
   font-weight: 500;
 }
 
@@ -208,7 +208,7 @@
 }
 
 .order-total .amount {
-  color: #e74c3c;
+  color: #DC5F4F;
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -231,18 +231,18 @@
 }
 
 .btn-details {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #E88D67 0%, #DC5F4F 100%);
   color: white;
 }
 
 .btn-details:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 5px 15px rgba(232, 141, 103, 0.4);
 }
 
 .btn-cancel {
-  background: #ecf0f1;
-  color: #e74c3c;
+  background: #FFF5E6;
+  color: #DC5F4F;
 }
 
 .btn-cancel:hover {
@@ -265,7 +265,7 @@
 
 .empty-orders button {
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #E88D67 0%, #DC5F4F 100%);
   color: white;
   border: none;
   border-radius: 8px;
@@ -277,13 +277,13 @@
 
 .empty-orders button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 5px 15px rgba(232, 141, 103, 0.4);
 }
 
 .loading {
   text-align: center;
   font-size: 1.5rem;
-  color: #2c3e50;
+  color: #5D4037;
   padding: 4rem;
 }
 
