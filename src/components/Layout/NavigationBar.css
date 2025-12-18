@@ -17,7 +17,7 @@
   border: 2px solid var(--color-accent-orange);
   border-radius: var(--border-radius-medium);
   padding: var(--spacing-sm) var(--spacing-md);
-  font-size: 16px;
+  font-size: 24px;
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-brown);
   cursor: pointer;
@@ -58,6 +58,15 @@
 }
 
 .navigation-bar__btn--login {
+  position: relative;
+  min-width: 60px;
+  justify-content: center;
+  padding: var(--spacing-sm);
+  font-size: 24px;
+  margin-right: var(--spacing-sm);
+}
+
+.navigation-bar__btn--orders {
   position: relative;
   min-width: 60px;
   justify-content: center;

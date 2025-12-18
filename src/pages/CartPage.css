@@ -219,8 +219,8 @@
 
 .cart-page__checkout-btn {
   position: absolute;
-  right: 10%;
-  top: 50%;
+  right: 30%;
+  top: 60%;
   transform: translateY(-50%);
   border: none;
   background: transparent;
