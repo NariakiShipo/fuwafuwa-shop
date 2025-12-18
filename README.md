@@ -70,142 +70,103 @@
 
 ## 📁 專案結構
 
-/Users/nariaki/Desktop/web/fuwafuwa-shop/
-├───.env.example
-├───.gitignore
-├───firebase.json
-├───firestore.rules
-├───index.html
-├───package-lock.json
-├───package.json
-├───README.md
-├───tsconfig.json
-├───tsconfig.node.json
-├───vite.config.ts
-├───.git/...
-├───docs/
-│   ├───CHECKLIST.md
-│   ├───GITHUB_UPLOAD_CHECKLIST.md
-│   ├───INDEX_JP.md
-│   ├───INDEX.md
-│   ├───PROJECT_STRUCTURE.md
-│   ├───README_OLD.md
-│   ├───README.md
-│   ├───STRUCTURE_CLEANUP.md
-│   ├───guides/
-│   │   ├───FIREBASE_CONFIG_GUIDE.md
-│   │   ├───FIREBASE_SETUP.md
-│   │   ├───FIRESTORE_RULES_GUIDE.md
-│   │   ├───FIRESTORE_SETUP.md
-│   │   ├───QUICK_FIX.md
-│   │   └───VISUAL_GUIDE.md
-│   └───implementation/
-│       ├───FIREBASE_IMPLEMENTATION.md
-│       ├───IMPLEMENTATION_COMPLETE.md
-│       ├───IMPLEMENTATION_JP.md
-│       └───IMPLEMENTATION.md
-├───node_modules/...
-├───public/
-│   └───images/
-│       ├───background.png
-│       ├───ball.png
-│       ├───bow.png
-│       ├───brush.png
-│       ├───buy_button.png
-│       ├───cage.png
-│       ├───can.png
-│       ├───checkout.png
-│       ├───collar.png
-│       ├───count_decrease.png
-│       ├───count_increase.png
-│       ├───dog_heart_press_1.png
-│       ├───dog_heart_press_2.png
-│       ├───dog_product_illustration.png
-│       ├───dog.png
-│       ├───electric_chicken_background.png
-│       ├───expanded_item.png
-│       ├───fuwa_title.png
-│       ├───hat.png
-│       ├───introduce.png
-│       ├───item_field.png
-│       ├───product_field.png
-│       ├───shop_item.png
-│       ├───shopping_cart.png
-│       ├───shopping-cart-icon.png
-│       └───swipe_right.png
-├───reference/
-│   ├───aminal-01.png
-│   ├───aminal-02.png
-│   └───aminal-03.png
-└───src/
-    ├───App.css
-    ├───App.tsx
-    ├───main.tsx
-    ├───vite-env.d.ts
-    ├───assets/
-    │   └───styles/
-    │       └───globals.css
-    ├───components/
-    │   ├───index.ts
-    │   ├───Cart/
-    │   │   ├───BasketVisualizer.css
-    │   │   └───BasketVisualizer.tsx
-    │   ├───Common/
-    │   │   ├───LanguageSwitcher.css
-    │   │   └───LanguageSwitcher.tsx
-    │   ├───Layout/
-    │   │   ├───NavigationBar.css
-    │   │   ├───NavigationBar.tsx
-    │   │   ├───SplitScreen.css
-    │   │   └───SplitScreen.tsx
-    │   ├───Pet/
-    │   │   ├───PetRoom.css
-    │   │   ├───PetRoom.tsx
-    │   │   ├───ReactionPreview.css
-    │   │   └───ReactionPreview.tsx
-    │   └───Shop/
-    │       ├───ProductCard.css
-    │       ├───ProductCard.tsx
-    │       ├───ShopGrid.css
-    │       └───ShopGrid.tsx
-    ├───contexts/
-    │   └───AuthContext.tsx
-    ├───hooks/
-    │   ├───index.ts
-    │   ├───useCart.ts
-    │   ├───useOrders.ts
-    │   └───usePet.ts
-    ├───i18n/
-    │   ├───index.ts
-    │   ├───LanguageContext.tsx
-    │   ├───translations.ts
-    │   └───secrets/
-    ├───libs/
-    │   └───firebase.ts
-    ├───pages/
-    │   ├───CartPage.css
-    │   ├───CartPage.tsx
-    │   ├───HomePage.css
-    │   ├───HomePage.tsx
-    │   ├───index.ts
-    │   ├───LoginPage.css
-    │   ├───LoginPage.tsx
-    │   ├───MyOrdersPage.css
-    │   ├───MyOrdersPage.tsx
-    │   ├───OrderPage.css
-    │   ├───OrderPage.tsx
-    │   ├───OrderSuccessPage.css
-    │   ├───OrderSuccessPage.tsx
-    │   ├───ProductDetail.css
-    │   └───ProductDetail.tsx
-    ├───services/
-    │   ├───cartService.ts
-    │   ├───orderService.ts
-    │   ├───petService.ts
-    │   ├───productService.ts
-    │   └───userService.ts
-    └───types/
-        └───index.ts
+```
+fuwafuwa-shop/
+├── 📄 配置文件
+│   ├── firebase.json              # Firebase 部署設定
+│   ├── firestore.rules            # Firestore 安全規則
+│   ├── tsconfig.json              # TypeScript 配置
+│   ├── vite.config.ts             # Vite 構建配置
+│   ├── package.json               # 專案依賴
+│   └── .env.example               # 環境變數範本
+│
+├── 📂 docs/                       # 項目文件
+│   ├── PROJECT_STRUCTURE.md       # 詳細結構說明
+│   ├── CHECKLIST.md               # 開發檢查清單
+│   ├── GITHUB_UPLOAD_CHECKLIST.md # GitHub 上傳指南
+│   ├── guides/                    # 指南文件
+│   │   ├── FIREBASE_SETUP.md
+│   │   ├── FIREBASE_CONFIG_GUIDE.md
+│   │   ├── FIRESTORE_SETUP.md
+│   │   ├── FIRESTORE_RULES_GUIDE.md
+│   │   ├── VISUAL_GUIDE.md
+│   │   └── QUICK_FIX.md
+│   └── implementation/            # 實現文件
+│
+├── 📂 public/                     # 靜態資源
+│   └── images/                    # 產品圖片 & 圖標
+│
+├── 📂 src/                        # 源代碼
+│   ├── main.tsx                   # 應用入口
+│   ├── App.tsx                    # 主應用組件
+│   │
+│   ├── 📂 assets/                 # 資源文件
+│   │   └── styles/
+│   │       └── globals.css        # 全局樣式 & CSS 變數
+│   │
+│   ├── 📂 components/             # 可復用組件
+│   │   ├── Cart/
+│   │   │   └── BasketVisualizer   # 購物車視覺化
+│   │   ├── Common/
+│   │   │   └── LanguageSwitcher   # 語言切換器
+│   │   ├── Layout/
+│   │   │   ├── NavigationBar      # 導航欄
+│   │   │   └── SplitScreen        # 分屏布局
+│   │   ├── Pet/
+│   │   │   ├── PetRoom           # 寵物房間
+│   │   │   └── ReactionPreview   # 反應預覽
+│   │   └── Shop/
+│   │       ├── ProductCard        # 產品卡片
+│   │       └── ShopGrid           # 產品網格
+│   │
+│   ├── 📂 pages/                  # 頁面組件
+│   │   ├── HomePage               # 首頁
+│   │   ├── ProductDetail          # 產品詳情
+│   │   ├── CartPage               # 購物車頁面
+│   │   ├── LoginPage              # 登入頁面
+│   │   ├── OrderPage              # 訂單頁面
+│   │   ├── OrderSuccessPage       # 訂單成功頁面
+│   │   ├── OrderDetailPage        # 訂單詳情頁面 ✨ NEW
+│   │   └── MyOrdersPage           # 我的訂單頁面
+│   │
+│   ├── 📂 contexts/               # React Context
+│   │   └── AuthContext            # 用戶認證上下文
+│   │
+│   ├── 📂 hooks/                  # 自定義 Hooks
+│   │   ├── useCart                # 購物車邏輯
+│   │   ├── useOrders              # 訂單邏輯
+│   │   └── usePet                 # 寵物互動邏輯
+│   │
+│   ├── 📂 services/               # 業務邏輯服務
+│   │   ├── productService         # 產品數據
+│   │   ├── cartService            # 購物車操作
+│   │   ├── orderService           # 訂單操作
+│   │   ├── petService             # 寵物數據
+│   │   └── userService            # 用戶數據
+│   │
+│   ├── 📂 i18n/                   # 多語言支援
+│   │   ├── translations.ts        # 語言文本
+│   │   └── LanguageContext        # 語言上下文
+│   │
+│   ├── 📂 libs/                   # 第三方庫配置
+│   │   └── firebase.ts            # Firebase 初始化
+│   │
+│   └── 📂 types/                  # TypeScript 類型定義
+│       └── index.ts               # 共享類型
+│
+└── 📂 reference/                  # 參考資料 (設計稿等)
+```
+
+### 核心模塊說明
+
+| 模塊 | 功能 | 主要文件 |
+|------|------|---------|
+| **購物系統** | 商品瀏覽、購物車、結帳 | ProductCard, ShopGrid, CartPage, OrderPage |
+| **訂單管理** | 訂單建立、追蹤、詳情查看 | orderService, MyOrdersPage, OrderDetailPage |
+| **用戶系統** | 登入、認證、個人資料 | AuthContext, LoginPage, userService |
+| **寵物互動** | 寵物飼養、互動反應 | PetRoom, usePet, petService |
+| **多語言** | 中文/英文切換 | LanguageContext, translations.ts |
+| **Firebase集成** | 認證、數據庫、部署 | firebase.ts, firestore.rules |
 
 ## 🔑 環境變數
 
