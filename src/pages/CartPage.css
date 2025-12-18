@@ -166,6 +166,9 @@
 }
 
 .cart-page__summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
   background-color: var(--color-white);
   border-radius: var(--border-radius-large);
   border: 3px solid var(--color-border-orange);
@@ -218,20 +221,17 @@
 }
 
 .cart-page__checkout-btn {
-  position: absolute;
-  right: 30%;
-  top: 60%;
-  transform: translateY(-50%);
   border: none;
   background: transparent;
   cursor: pointer;
   padding: 0;
   transition: transform 0.2s;
-  z-index: 10;
+  margin-left: auto;
+  display: block;
 }
 
 .cart-page__checkout-btn:hover {
-  transform: translateY(-50%) scale(1.05);
+  transform: scale(1.05);
 }
 
 .cart-page__checkout-btn img {

@@ -77,13 +77,15 @@ export const CartPage: React.FC = () => {
                 <span>{t.cart.subtotal}:</span>
                 <span className="cart-page__summary-value">¥{subtotal}</span>
               </div>
-              <button
-                className="cart-page__checkout-btn"
-                onClick={() => navigate('/order')}
-              >
-                <img src="/images/checkout.png" alt="Proceed to checkout" />
-              </button>
             </div>
+
+            {/* Checkout Button */}
+            <button
+              className="cart-page__checkout-btn"
+              onClick={() => navigate('/order')}
+            >
+              <img src="/images/checkout.png" alt="Proceed to checkout" />
+            </button>
           </>
         )}
       </div>
