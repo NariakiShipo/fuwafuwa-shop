@@ -6,6 +6,7 @@ import { LoginPage } from './pages/LoginPage';
 import OrderPage from './pages/OrderPage';
 import OrderSuccessPage from './pages/OrderSuccessPage';
 import MyOrdersPage from './pages/MyOrdersPage';
+import OrderDetailPage from './pages/OrderDetailPage';
 import { NavigationBar } from './components/Layout/NavigationBar';
 import { useCart } from './hooks/useCart';
 import { LanguageProvider, useLanguage } from './i18n';
@@ -77,6 +78,7 @@ function AppContent() {
           <Route path="/order" element={<OrderPage />} />
           <Route path="/order-success/:orderId" element={<OrderSuccessPage />} />
           <Route path="/my-orders" element={<MyOrdersPage />} />
+          <Route path="/order/:orderId" element={<OrderDetailPage />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>

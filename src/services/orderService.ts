@@ -94,6 +94,21 @@ export const getOrder = async (orderId: string): Promise<Order | null> => {
   return null;
 };
 
+// 根據用戶ID和訂單ID獲取訂單
+export const getOrderById = async (userId: string, orderId: string): Promise<Order | null> => {
+  const orderRef = doc(db, ORDERS_COLLECTION, orderId);
+  const orderSnap = await getDoc(orderRef);
+
+  if (orderSnap.exists()) {
+    const orderData = { orderId: orderSnap.id, ...orderSnap.data() } as Order;
+    // 確認訂單屬於該用戶
+    if (orderData.userId === userId) {
+      return orderData;
+    }
+  }
+  return null;
+};
+
 // 獲取用戶的所有訂單
 export const getUserOrders = async (
   userId: string,

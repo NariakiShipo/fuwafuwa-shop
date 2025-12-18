@@ -1,5 +1,5 @@
 import React from 'react';
-import { Product } from '../../../debug/types';
+import { Product } from '../../types';
 import './ProductCard.css';
 
 interface ProductCardProps {

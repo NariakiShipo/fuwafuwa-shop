@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguage, Language } from '../../i18n';
+import { useLanguage } from '../../i18n';
 import './LanguageSwitcher.css';
 
 export const LanguageSwitcher: React.FC = () => {

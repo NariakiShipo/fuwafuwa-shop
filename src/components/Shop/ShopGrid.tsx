@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Product } from '../../../debug/types';
+import { Product } from '../../types';
 import { useLanguage } from '../../i18n';
 import './ShopGrid.css';
 import { ProductCard } from './ProductCard';

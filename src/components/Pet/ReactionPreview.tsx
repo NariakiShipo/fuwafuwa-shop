@@ -1,7 +1,11 @@
 import React from 'react';
-import { ReactionType } from '../../../debug/types';
+import { ReactionType } from '../../types';
 import { useLanguage } from '../../i18n';
 import './ReactionPreview.css';
+
+interface ReactionPreviewProps {
+  reactionType: ReactionType;
+}
 
 export const ReactionPreview: React.FC<ReactionPreviewProps> = ({ reactionType }) => {
   const { t } = useLanguage();
