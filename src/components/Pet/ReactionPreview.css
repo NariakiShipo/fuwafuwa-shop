@@ -7,6 +7,7 @@
   border-radius: var(--border-radius-large);
   border: 2px solid var(--color-accent-pink);
   animation: reactionEntrance 0.5s ease-out;
+  flex-direction: row;
 }
 
 @keyframes reactionEntrance {
@@ -25,6 +26,7 @@
   height: 80px;
   flex-shrink: 0;
   animation: petBounce 1s ease-in-out infinite;
+  order: 1;
 }
 
 @keyframes petBounce {
@@ -50,6 +52,7 @@
   padding: var(--spacing-sm) var(--spacing-md);
   box-shadow: 0 2px 8px var(--color-shadow);
   flex: 1;
+  order: 2;
 }
 
 .reaction-preview__bubble::before {

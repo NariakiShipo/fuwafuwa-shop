@@ -6,7 +6,7 @@ export interface Product {
   name: string;
   price: number;
   description: string;
-  category: 'food' | 'toy' | 'accessory';
+  category: 'food' | 'toy' | 'accessory' | 'brush';
   images: string[];
   reactionType: ReactionType;
   stock: number;
@@ -101,7 +101,7 @@ export interface OrderItem {
   price: number;
   quantity: number;
   subtotal: number;
-  category: 'food' | 'toy' | 'accessory';
+  category: 'food' | 'toy' | 'accessory' | 'brush';
   imageUrl?: string;
 }
 

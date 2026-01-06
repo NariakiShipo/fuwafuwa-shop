@@ -29,6 +29,16 @@ export interface Translations {
       food: string;
       toy: string;
       accessory: string;
+      brush: string;
+      favorites: string;
+    };
+    categoryDescriptions: {
+      all: string;
+      food: string;
+      toy: string;
+      accessory: string;
+      brush: string;
+      favorites: string;
     };
     addToCart: string;
     stock: string;
@@ -148,10 +158,20 @@ export const translations: Record<Language, Translations> = {
     },
     product: {
       categories: {
-        all: '全部',
-        food: '🍖 食品',
-        toy: '🎾 玩具',
-        accessory: '🎀 配件',
+        all: 'All.png',
+        food: 'can.png',
+        toy: 'ball.png',
+        accessory: 'collar.png',
+        brush: 'brush.png',
+        favorites: 'dog_heart_press_2.png',
+      },
+      categoryDescriptions: {
+        all: '所有商品',
+        food: '寵物食品',
+        toy: '寵物玩具',
+        accessory: '寵物配件',
+        brush: '寵物美容用品',
+        favorites: '我的最愛',
       },
       addToCart: '加入購物車',
       stock: '庫存',
@@ -257,10 +277,20 @@ export const translations: Record<Language, Translations> = {
     },
     product: {
       categories: {
-        all: 'All',
-        food: '🍖 Food',
-        toy: '🎾 Toy',
-        accessory: '🎀 Accessory',
+        all: 'All.png',
+        food: 'can.png',
+        toy: 'ball.png',
+        accessory: 'collar.png',
+        brush: 'brush.png',
+        favorites: 'dog_heart_press_2.png',
+      },
+      categoryDescriptions: {
+        all: 'All Products',
+        food: 'Pet Food',
+        toy: 'Pet Toys',
+        accessory: 'Pet Accessories',
+        brush: 'Pet Cosmetic Tools',
+        favorites: 'My Favorites',
       },
       addToCart: 'Add to Cart',
       stock: 'Stock',

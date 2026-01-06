@@ -47,7 +47,7 @@ export const HomePage: React.FC = () => {
       name: t.sampleProducts.brush.name,
       price: 1200,
       description: t.sampleProducts.brush.description,
-      category: 'accessory',
+      category: 'brush',
       images: ['/images/brush.png'],
       reactionType: 'happy',
       stock: 8,
@@ -90,6 +90,7 @@ export const HomePage: React.FC = () => {
         }
         topHeight="40%"
       />
+      <div className="home-page__footer"></div>
     </div>
   );
 };

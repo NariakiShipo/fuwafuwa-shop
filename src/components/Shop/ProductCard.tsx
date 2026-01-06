@@ -7,6 +7,16 @@ interface ProductCardProps {
   onClick?: (product: Product) => void;
 }
 
+const getCategoryImage = (category: string): string => {
+  const categoryImageMap: Record<string, string> = {
+    food: 'can.png',
+    toy: 'ball.png',
+    accessory: 'collar.png',
+    brush: 'brush.png',
+  };
+  return categoryImageMap[category] || 'All.png';
+};
+
 export const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => {
   const handleClick = () => {
     if (onClick) {
@@ -29,9 +39,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) =>
         <div className="product-card__footer">
           <span className="product-card__price">¥{product.price}</span>
           <div className="product-card__category-badge">
-            {product.category === 'food' && '🍖'}
-            {product.category === 'toy' && '🎾'}
-            {product.category === 'accessory' && '🎀'}
+            <img 
+              src={`/images/${getCategoryImage(product.category)}`} 
+              alt={product.category}
+              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+            />
           </div>
         </div>
       </div>

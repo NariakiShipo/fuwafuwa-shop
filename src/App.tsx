@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { HomePage } from './pages/HomePage';
 import { ProductDetail } from './pages/ProductDetail';
 import { CartPage } from './pages/CartPage';
@@ -8,7 +9,6 @@ import OrderSuccessPage from './pages/OrderSuccessPage';
 import MyOrdersPage from './pages/MyOrdersPage';
 import OrderDetailPage from './pages/OrderDetailPage';
 import { NavigationBar } from './components/Layout/NavigationBar';
-import { useCart } from './hooks/useCart';
 import { LanguageProvider, useLanguage } from './i18n';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { LanguageSwitcher } from './components/Common/LanguageSwitcher';
@@ -16,9 +16,21 @@ import './assets/styles/globals.css';
 import './App.css';
 
 function AppContent() {
-  const { cart } = useCart();
   const { t } = useLanguage();
   const { currentUser, logout } = useAuth();
+  const location = useLocation();
+
+  useEffect(() => {
+    const isHome = location.pathname === '/';
+    if (isHome) {
+      document.body.classList.remove('app-body');
+    } else {
+      document.body.classList.add('app-body');
+    }
+    return () => {
+      document.body.classList.remove('app-body');
+    };
+  }, [location.pathname]);
 
   const handleLogout = async () => {
     try {
@@ -34,7 +46,6 @@ function AppContent() {
     <div className="app">
       {/* Navigation Bar */}
       <NavigationBar
-        cartItemCount={cart.items.reduce((sum, item) => sum + item.quantity, 0)}
         languageSwitcher={
           <>
             <LanguageSwitcher />

@@ -17,13 +17,7 @@ const CART_CACHE_EXPIRY = 5 * 60 * 1000; // 5分鐘
 
 // 獲取購物車（帶緩存）
 export const getCart = async (userId: string): Promise<CartItem[]> => {
-  // 先檢查 localStorage 緩存
-  const cached = getCartFromCache(userId);
-  if (cached) {
-    return cached;
-  }
-
-  // 從 Firestore 獲取
+  // 從 Firestore 獲取（跳過緩存直接讀取最新數據）
   const cartRef = doc(db, CARTS_COLLECTION, userId);
   const cartSnap = await getDoc(cartRef);
 
@@ -159,7 +153,7 @@ async function convertFirestoreCartToCartItems(
         id: item.productId,
         name: item.productName,
         price: item.price,
-        category: item.category as 'food' | 'toy' | 'accessory',
+        category: item.category as 'food' | 'toy' | 'accessory' | 'brush',
         images: [item.imageUrl],
         description: '', // 購物車不需要完整描述
         reactionType: 'neutral', // 購物車不需要反應類型
@@ -174,25 +168,6 @@ async function convertFirestoreCartToCartItems(
 }
 
 // 從 localStorage 獲取緩存
-function getCartFromCache(userId: string): CartItem[] | null {
-  try {
-    const cacheData = localStorage.getItem(`${CART_CACHE_KEY}_${userId}`);
-    if (!cacheData) return null;
-
-    const { items, expiry } = JSON.parse(cacheData);
-    
-    // 檢查是否過期
-    if (Date.now() > expiry) {
-      localStorage.removeItem(`${CART_CACHE_KEY}_${userId}`);
-      return null;
-    }
-
-    return items;
-  } catch {
-    return null;
-  }
-}
-
 // 保存到 localStorage 緩存
 function saveCartToCache(userId: string, items: CartItem[]): void {
   try {

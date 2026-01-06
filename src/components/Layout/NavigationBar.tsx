@@ -1,19 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import { useCart } from '../../hooks/useCart';
 import './NavigationBar.css';
 
 interface NavigationBarProps {
-  cartItemCount: number;
   languageSwitcher?: React.ReactNode;
 }
 
 export const NavigationBar: React.FC<NavigationBarProps> = ({
-  cartItemCount,
   languageSwitcher,
 }) => {
   const navigate = useNavigate();
   const { currentUser } = useAuth();
+  const { cart } = useCart();
+  const cartItemCount = cart.items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <nav className="navigation-bar">

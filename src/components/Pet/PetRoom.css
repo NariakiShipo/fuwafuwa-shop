@@ -1,24 +1,28 @@
 .pet-room {
   width: 100%;
-  height: 100%;
+  height: auto;
   position: relative;
-  overflow: hidden;
-  background: linear-gradient(to bottom, #FFF5E6, #FFE4B5);
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
 }
 
 .pet-room__background {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
   z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #FFF5E6, #FFE4B5);
 }
 
 .pet-room__background img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  display: block;
 }
 
 .pet-room__title {
@@ -26,7 +30,7 @@
   top: 5%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10;
+  z-index: 3;
 }
 
 .pet-room__title img {
@@ -38,11 +42,11 @@
 .pet-room__controls {
   position: absolute;
   top: 15%;
-  right: 5%;
+  left: 5%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: var(--spacing-sm);
-  z-index: 10;
+  z-index: 4;
 }
 
 .pet-room__control-btn {
@@ -80,7 +84,7 @@
   bottom: 15%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 5;
+  z-index: 2;
   transition: transform 0.3s ease;
 }
 

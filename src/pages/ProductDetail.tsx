@@ -16,7 +16,7 @@ export const ProductDetail: React.FC = () => {
   
   const [product, setProduct] = useState<Product | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [quantity, setQuantity] = useState(1);
+  const [isFavorited, setIsFavorited] = useState(false);
 
   // 從本地數據加載商品（臨時方案）
   useEffect(() => {
@@ -57,7 +57,7 @@ export const ProductDetail: React.FC = () => {
         name: t.sampleProducts.brush.name,
         price: 1200,
         description: t.sampleProducts.brush.description,
-        category: 'accessory',
+        category: 'brush',
         images: ['/images/brush.png'],
         reactionType: 'happy',
         stock: 8,
@@ -86,6 +86,19 @@ export const ProductDetail: React.FC = () => {
     
     const foundProduct = sampleProducts.find(p => p.id === id);
     setProduct(foundProduct || null);
+    
+    // Load favorite status from localStorage
+    if (foundProduct) {
+      const savedFavorites = localStorage.getItem('favoriteProducts');
+      if (savedFavorites) {
+        try {
+          const favorites = JSON.parse(savedFavorites);
+          setIsFavorited(favorites.includes(foundProduct.id));
+        } catch (error) {
+          console.error('Error loading favorites:', error);
+        }
+      }
+    }
   }, [id, t]);
 
   if (!product) {
@@ -115,7 +128,7 @@ export const ProductDetail: React.FC = () => {
       return;
     }
 
-    const success = await addToCart(product, quantity);
+    const success = await addToCart(product, 1);
     if (success) {
       alert(`${product.name} ${t.messages.addedToCart}`);
     } else {
@@ -123,16 +136,33 @@ export const ProductDetail: React.FC = () => {
     }
   };
 
-  const increaseQuantity = () => {
-    if (quantity < product.stock) {
-      setQuantity(quantity + 1);
+  const handleHeartClick = () => {
+    if (!product) return;
+    
+    const newIsFavorited = !isFavorited;
+    setIsFavorited(newIsFavorited);
+    
+    // Save to localStorage
+    const savedFavorites = localStorage.getItem('favoriteProducts');
+    let favorites: string[] = [];
+    
+    if (savedFavorites) {
+      try {
+        favorites = JSON.parse(savedFavorites);
+      } catch (error) {
+        console.error('Error parsing favorites:', error);
+      }
     }
-  };
-
-  const decreaseQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
+    
+    if (newIsFavorited) {
+      if (!favorites.includes(product.id)) {
+        favorites.push(product.id);
+      }
+    } else {
+      favorites = favorites.filter(id => id !== product.id);
     }
+    
+    localStorage.setItem('favoriteProducts', JSON.stringify(favorites));
   };
 
   return (
@@ -186,6 +216,7 @@ export const ProductDetail: React.FC = () => {
             {product.category === 'food' && t.product.categories.food}
             {product.category === 'toy' && t.product.categories.toy}
             {product.category === 'accessory' && t.product.categories.accessory}
+            {product.category === 'brush' && '毛刷'}
           </span>
         </div>
         <p className="product-detail__price">¥{product.price}</p>
@@ -200,41 +231,30 @@ export const ProductDetail: React.FC = () => {
         </div>
       </div>
 
-      {/* Bottom Action Bar with Reaction Preview */}
-      <div className="product-detail__action-bar">
-        <div className="product-detail__reaction">
-          <ReactionPreview reactionType={product.reactionType} />
-        </div>
+      {/* Reaction Preview */}
+      <div className="product-detail__reaction">
+        <ReactionPreview reactionType={product.reactionType} />
+      </div>
 
-        <div className="product-detail__purchase">
-          {/* Quantity Selector */}
-          <div className="product-detail__quantity">
-            <button
-              className="product-detail__quantity-btn"
-              onClick={decreaseQuantity}
-              disabled={quantity <= 1}
-            >
-              <img src="/images/count_decrease.png" alt="-" className='product-detail__quantity-btn--decrease'/>
-            </button>
-            <span className="product-detail__quantity-value">{quantity}</span>
-            <button
-              className="product-detail__quantity-btn"
-              onClick={increaseQuantity}
-              disabled={quantity >= product.stock}
-            >
-              <img src="/images/count_increase.png" alt="+" className='product-detail__quantity-btn--increase'/>
-            </button>
-          </div>
+      {/* Coffee Footer */}
+      <div className="product-detail__footer">
+        {/* Buy Button */}
+        <button
+          className="product-detail__buy-btn"
+          onClick={handleAddToCart}
+          disabled={product.stock === 0}
+        >
+          <img src="/images/buy_button.png" alt="Add to Cart" />
+        </button>
 
-          {/* Buy Button */}
-          <button
-            className="product-detail__buy-btn"
-            onClick={handleAddToCart}
-            disabled={product.stock === 0}
-          >
-            <img src="/images/buy_button.png" alt="Add to Cart" />
-          </button>
-        </div>
+        {/* Dog Heart Image */}
+        <button
+          className="product-detail__dog-heart"
+          onClick={handleHeartClick}
+          aria-label="Add to favorites"
+        >
+          <img src={isFavorited ? '/images/dog_heart_press_2.png' : '/images/dog_heart_press_1.png'} alt="heart" />
+        </button>
       </div>
     </div>
   );

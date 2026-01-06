@@ -38,6 +38,24 @@ body {
   background-color: var(--color-bg-cream);
   color: var(--color-text-brown);
   overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: auto;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Cute rounded button style */

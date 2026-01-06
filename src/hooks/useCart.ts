@@ -51,8 +51,11 @@ export const useCart = () => {
       try {
         console.log('Adding to cart:', { userId: user.uid, product, quantity });
         await addToCartService(user.uid, product, quantity);
+        console.log('Product added to Firestore, now reloading cart...');
+        // 添加小延迟确保 Firestore 数据已写入
+        await new Promise(resolve => setTimeout(resolve, 300));
         await loadCart(); // 重新加載購物車
-        console.log('Successfully added to cart');
+        console.log('Successfully added to cart and reloaded');
         return true;
       } catch (error) {
         console.error('Failed to add to cart:', error);

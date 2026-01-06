@@ -48,7 +48,7 @@ export const getProduct = async (productId: string): Promise<Product | null> => 
 
 // 根據分類獲取商品
 export const getProductsByCategory = async (
-  category: 'food' | 'toy' | 'accessory'
+  category: 'food' | 'toy' | 'accessory' | 'brush'
 ): Promise<Product[]> => {
   const productsQuery = query(
     collection(db, PRODUCTS_COLLECTION),

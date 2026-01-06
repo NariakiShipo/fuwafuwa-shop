@@ -33,36 +33,33 @@ export const PetRoom: React.FC = () => {
     <div className="pet-room">
       {/* Background */}
       <div className="pet-room__background">
-        <img src="/images/background.png" alt="Room Background" />
+        <img src="/images/electric_chicken_background.png" alt="Room Background" />
+        
+        {/* Interaction Buttons */}
+        <div className="pet-room__controls">
+          {interactionButtons.map((button) => (
+            <button
+              key={button.id}
+              className="pet-room__control-btn"
+              onClick={() => handleInteraction(button.animation)}
+            >
+              <img src={`/images/${button.icon}`} alt={button.action} />
+            </button>
+          ))}
+        </div>
+
+        {/* Pet Character */}
+        <div className={`pet-room__pet ${isPetAnimating ? 'animating' : ''}`}>
+          <img src="/images/dog.png" alt="Pet" />
+          {isPetAnimating && (
+            <div className="pet-room__pet-reaction">
+              {currentAnimation === 'happy' && '💖'}
+              {currentAnimation === 'excited' && '✨'}
+              {currentAnimation === 'hungry' && '🤤'}
+            </div>
+          )}
+        </div>
       </div>
-
-
-      {/* Interaction Buttons */}
-      <div className="pet-room__controls">
-        {interactionButtons.map((button) => (
-          <button
-            key={button.id}
-            className="pet-room__control-btn"
-            onClick={() => handleInteraction(button.animation)}
-          >
-            <img src={`/images/${button.icon}`} alt={button.action} />
-          </button>
-        ))}
-      </div>
-
-      {/* Pet Character */}
-      <div className={`pet-room__pet ${isPetAnimating ? 'animating' : ''}`}>
-        <img src="/images/dog.png" alt="Pet" />
-        {isPetAnimating && (
-          <div className="pet-room__pet-reaction">
-            {currentAnimation === 'happy' && '💖'}
-            {currentAnimation === 'excited' && '✨'}
-            {currentAnimation === 'hungry' && '🤤'}
-          </div>
-        )}
-      </div>
-
-      
     </div>
   );
 };

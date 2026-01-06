@@ -46,6 +46,9 @@ export const CartPage: React.FC = () => {
                   <p className="cart-page__item-price">¥{item.product.price}</p>
                 </div>
                 <div className="cart-page__item-controls">
+                  <div className="cart-page__item-total">
+                    ¥{Math.floor(item.product.price * item.quantity)}
+                  </div>
                   <div className="cart-page__item-quantity">
                     <button
                       onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
