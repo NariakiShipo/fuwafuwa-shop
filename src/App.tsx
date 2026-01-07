@@ -21,14 +21,14 @@ function AppContent() {
   const location = useLocation();
 
   useEffect(() => {
-    const isHome = location.pathname === '/';
-    if (isHome) {
-      document.body.classList.remove('app-body');
+    const isProductDetail = location.pathname.startsWith('/product/');
+    if (isProductDetail) {
+      document.body.classList.add('product-detail-body');
     } else {
-      document.body.classList.add('app-body');
+      document.body.classList.remove('product-detail-body');
     }
     return () => {
-      document.body.classList.remove('app-body');
+      document.body.classList.remove('product-detail-body');
     };
   }, [location.pathname]);
 
@@ -43,7 +43,7 @@ function AppContent() {
   };
 
   return (
-    <div className="app">
+    <div className="app app-body">
       {/* Navigation Bar */}
       <NavigationBar
         languageSwitcher={

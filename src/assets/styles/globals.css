@@ -44,6 +44,10 @@ body {
   padding: 0;
 }
 
+body.product-detail-body {
+  padding-bottom: 0;
+}
+
 html {
   height: auto;
   overflow: auto;

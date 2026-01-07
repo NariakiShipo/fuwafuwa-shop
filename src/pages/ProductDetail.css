@@ -283,3 +283,7 @@
   max-height: 150px;
   object-fit: contain;
 }
+
+body.product-detail-body {
+  padding-bottom: 550px;
+}

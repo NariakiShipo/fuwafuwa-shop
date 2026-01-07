@@ -7,10 +7,6 @@
   overflow: visible;
 }
 
-body.app-body {
-  padding-bottom: 550px;
-}
-
 .app__content {
   width: 100%;
 }
